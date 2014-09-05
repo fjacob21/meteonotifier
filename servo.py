@@ -1,3 +1,6 @@
+import urllib2
+import urllib
+from xml.dom import minidom
 import RPi.GPIO as GPIO
 import time
 
@@ -8,6 +11,11 @@ def setpos(pwm,angle):
 	#pwm.start(val)
 	time.sleep(2)
 	pwm.ChangeDutyCycle(0)
+
+def getmeteo():
+	url = "http://weather.yahooapis.com/forecastrss?w=3534"
+	dom = minidom.parse(urllib.urlopen(url))
+	dom.getElementsByTagName('yweather:condition')[0]
 
 GPIO.setmode(GPIO.BOARD)
 
