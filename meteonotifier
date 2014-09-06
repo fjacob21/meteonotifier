@@ -10,4 +10,4 @@
 # Description:       Enable service provided by meteo notifier daemon.
 ### END INIT INFO
 
-sudo python /etc/init.d/servo.py
+sudo python /etc/init.d/servo.py &
