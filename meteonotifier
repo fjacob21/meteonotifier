@@ -1,0 +1,13 @@
+#!/bin/sh
+
+### BEGIN INIT INFO
+# Provides:          meteonotifier
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Start meteo notifier daemon at boot time
+# Description:       Enable service provided by meteo notifier daemon.
+### END INIT INFO
+
+sudo python /etc/init.d/servo.py
